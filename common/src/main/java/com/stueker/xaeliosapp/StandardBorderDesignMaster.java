@@ -2,16 +2,30 @@ package com.stueker.xaeliosapp;
 
 import com.codename1.system.Lifecycle;
 import com.codename1.ui.*;
+import com.codename1.ui.Button;
+import com.codename1.ui.Component;
+import com.codename1.ui.Container;
+import com.codename1.ui.Dialog;
+import com.codename1.ui.Graphics;
+import com.codename1.ui.Label;
+import com.codename1.ui.Paint;
+import com.codename1.ui.TextArea;
+import com.codename1.ui.TextField;
 import com.codename1.ui.geom.Dimension;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 
+import java.awt.*;
+import java.awt.Stroke;
+
 import static com.codename1.ui.CN.*;
 
 public class StandardBorderDesignMaster extends Lifecycle {
 
-    public Component sasa;
+
+    protected Component sasa;
+    private Object g;
 
     @Override
     public void runApp() {
@@ -72,14 +86,19 @@ public class StandardBorderDesignMaster extends Lifecycle {
                 // draw hi world in white text at the top left corner of the screen
                 g.setColor(0xffffff);
                 g.drawString("Hi World", getX(), getY());
+                g.drawString("Hld", getX(), getY());
+                // paint the screen in red
+g.drawLine(0,0,800,800);
+
+
             } };
-
-
-
+;
         hi.add(BorderLayout.CENTER, sasa);
 
 
-        hi.show();    }
+        hi.show();
+
+    }
 
 
 
