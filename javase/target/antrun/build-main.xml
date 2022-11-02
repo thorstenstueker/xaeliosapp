@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <mkdir dir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT" />
+    <mkdir dir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT/libs" />
+    <copy todir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT/libs">
+      <fileset dir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/libs" />
+    </copy>
+    <copy file="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT.jar" todir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT" />
+    <zip basedir="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT" destfile="/Users/thorsten/Documents/GitHub/xaeliosapp/javase/target/xaeliosapp-javase-1.0-SNAPSHOT.zip" includes="**"></zip>
+  </target>
+</project>
