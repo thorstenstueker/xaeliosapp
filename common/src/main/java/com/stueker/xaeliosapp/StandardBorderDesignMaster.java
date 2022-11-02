@@ -9,6 +9,7 @@ import com.codename1.ui.Dialog;
 import com.codename1.ui.Graphics;
 import com.codename1.ui.Label;
 import com.codename1.ui.Paint;
+import com.codename1.ui.Stroke;
 import com.codename1.ui.TextArea;
 import com.codename1.ui.TextField;
 import com.codename1.ui.geom.Dimension;
@@ -17,20 +18,20 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 
 import java.awt.*;
-import java.awt.Stroke;
 
 import static com.codename1.ui.CN.*;
 
 public class StandardBorderDesignMaster extends Lifecycle {
-
-
+public Stroke stroke = new Stroke(3, Stroke.CAP_SQUARE, Stroke.JOIN_MITER, 1);
+public Form hi;
+public Label labelchen;
     protected Component sasa;
     private Object g;
 
     @Override
     public void runApp() {
-        Form hi = new Form("Sample", new BorderLayout());
-        Label labelchen = new Label();
+        hi = new Form("Sample", new BorderLayout());
+        labelchen = new Label();
         Container left = new Container(BoxLayout.y()) {
             @Override
             protected Dimension calcPreferredSize() {
@@ -48,6 +49,7 @@ public class StandardBorderDesignMaster extends Lifecycle {
             }
         };
         Button alter = new Button("Alter");
+        alter.addActionListener(e->{hello();});
         Button dalter = new Button("Dark Alter");
         BoxLayout boxlayer = new BoxLayout(BoxLayout.Y_AXIS);
         //boxlayer.setAlign(Component.BRB_CENTER_OFFSET);
@@ -82,28 +84,77 @@ public class StandardBorderDesignMaster extends Lifecycle {
                 // red color
                 g.setColor(0xff0000);
                 // paint the screen in red
-                g.fillRect(getX(), getY(), getWidth(), getHeight());
+
                 // draw hi world in white text at the top left corner of the screen
-                g.setColor(0xffffff);
+
+
+                // paint the screen in red
+
+int maxX = g.getClipX() + g.getClipWidth();
+                System.out.println("maxX: " + maxX);
+                int maxY = g.getClipY() + g.getClipHeight();
+                System.out.println("maxY: " + maxY);
+              //g.translate(-currX, -currY);
+g.drawLine(getX(),getY(),maxX,maxY);
+                System.out.println("Window Height"+g.getClipHeight());
+
+
+// Reset the translation to zeroes
+
+
                 g.drawString("Hi World", getX(), getY());
                 g.drawString("Hld", getX(), getY());
-                // paint the screen in red
-g.drawLine(0,0,800,800);
-
-
+                g.drawString("Hld", 0,0);
             } };
-;
+
         hi.add(BorderLayout.CENTER, sasa);
 
 
         hi.show();
-
+        System.out.println(sasa.getAbsoluteY());
     }
 
 
 
     private void hello() {
-        Dialog.show("Hello Codename One", "Welcome to Codename One", "OK", null);
+        hi.repaint();
+        sasa = new Component(){
+            @Override
+            public void paint(Graphics g) {
+                // red color
+                g.setColor(0x000000);
+                // paint the screen in red
+
+                // draw hi world in white text at the top left corner of the screen
+
+
+                // paint the screen in red
+
+                int maxX = g.getClipX() + g.getClipWidth();
+                System.out.println("maxX: " + maxX);
+                int maxY = g.getClipY() + g.getClipHeight();
+                System.out.println("maxY: " + maxY);
+                //g.translate(-currX, -currY);
+                g.drawLine(getX(),getY(),maxX,maxY);
+                System.out.println("Window Height"+g.getClipHeight());
+
+
+// Reset the translation to zeroes
+
+
+                g.drawString("Hi World", getX(), getY());
+                g.drawString("Hld", getX(), getY());
+                g.drawString("Hld", 0,0);
+                ;
+
+            } };
+
+        hi.add(BorderLayout.CENTER, sasa);
+        System.out.println("added new");
+        labelchen.setText("hälloooh");
+        hi.setTitle("Hallöchen Jannöschen");
+
+      //Dialog.show("Hello Codename One", "Welcome to Codename One", "OK", null);
     }
 
 
