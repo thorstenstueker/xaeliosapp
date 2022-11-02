@@ -21,7 +21,7 @@ public class StandardBorderDesignMaster extends Lifecycle {
             @Override
             protected Dimension calcPreferredSize() {
                 Dimension d = super.calcPreferredSize();
-                d.setWidth(getDisplayWidth() / 6);
+                d.setWidth(getDisplayWidth() / 5);
                 return d;
             }
         };
