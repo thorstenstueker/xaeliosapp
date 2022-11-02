@@ -25,7 +25,10 @@ public class XaeliosApp extends Lifecycle {
     }
 
     private void hello() {
+
         Dialog.show("Hello Codename One", "Welcome to Codename One", "OK", null);
+   StandardBorderDesignMaster nono = new StandardBorderDesignMaster();
+   nono.runApp();
     }
 
 }
