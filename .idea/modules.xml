@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/xaeliosapp.iml" filepath="$PROJECT_DIR$/.idea/xaeliosapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/xaeliosapp-common.iml" filepath="$PROJECT_DIR$/common/xaeliosapp-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase/xaeliosapp-javase.iml" filepath="$PROJECT_DIR$/javase/xaeliosapp-javase.iml" />
+    </modules>
+  </component>
+</project>
