@@ -120,7 +120,7 @@ g.drawLine(getX(),getY(),maxX,maxY);
         hi.repaint();
         sasa = new Component(){
             @Override
-            public void paint(Graphics g) {
+            public static void paint(Graphics g) {
                 // red color
                 g.setColor(0x000000);
                 // paint the screen in red
@@ -135,7 +135,9 @@ g.drawLine(getX(),getY(),maxX,maxY);
                 int maxY = g.getClipY() + g.getClipHeight();
                 System.out.println("maxY: " + maxY);
                 //g.translate(-currX, -currY);
+
                 g.drawLine(getX(),getY(),maxX,maxY);
+
                 System.out.println("Window Height"+g.getClipHeight());
 
 
@@ -149,11 +151,13 @@ g.drawLine(getX(),getY(),maxX,maxY);
 
             } };
 
+
         hi.add(BorderLayout.CENTER, sasa);
         System.out.println("added new");
         labelchen.setText("hälloooh");
         hi.setTitle("Hallöchen Jannöschen");
 
+       
       //Dialog.show("Hello Codename One", "Welcome to Codename One", "OK", null);
     }
 
